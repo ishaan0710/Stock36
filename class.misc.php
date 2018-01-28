@@ -72,6 +72,65 @@ class mainc{
         return false;
 	}
 
+
+ 
+ public function fetchcomp($data){
+      
+
+    
+
+       $sql = "select * from companies where symbol = '".$data."'";
+        
+       $query = mysqli_query($this->myconx,$sql); 
+       if($query->num_rows > 0){
+          $row = mysqli_fetch_row($query);
+          return $row;
+         }
+      else
+        return false;
+  }
+
+
+ public function pred_data($data){
+      
+
+    
+
+       $sql = "select * from predicted where symbol = '".$data."'";
+        
+       $query = mysqli_query($this->myconx,$sql); 
+       if($query->num_rows > 0){
+          $row = mysqli_fetch_row($query);
+          return $row;
+         }
+      else
+        return false;
+  }
+
+
+public function ucomp($data){
+      
+
+       $ret=array();
+
+       $sql = "select comp from ucomp where uid = '".$data."'";
+        
+       $query = mysqli_query($this->myconx,$sql); 
+       if($query->num_rows > 0){
+          while($row = mysqli_fetch_array($query)){
+          $ret[] = $row;
+         }
+         return $ret;
+        }
+      else
+        return false;
+
+
+
+}
+
+
+
   /*
 
 	public function sanitize_data($info){

@@ -10,8 +10,7 @@ $file = new mainc();
 if(isset($_POST['user_create'])){
 
   
-   echo "<script>console.log( 'Debug Objects: " . print_r($_POST) . "' );</script>";
-
+ 
 
   if($file->usercreate($_POST)){
   
@@ -41,7 +40,7 @@ if(isset($_POST['user_create'])){
       $_SESSION['uid'] = $user_info[0];
       $_SESSION['uname'] = $user_info[1];
       $_SESSION['uemail'] = $user_info[2];
-      header('location:dashboard.php');
+      header('location:../index.php');
       exit();
     }
   
@@ -63,10 +62,10 @@ if(isset($_POST['user_create'])){
 
 <body>
      
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation" style="background-color:black;">
  <div class="container">
-   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+   <div class="navbar-header" style="color:white">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color:white">
      
     <span class="sr-only"></span>
     <span class="icon-bar"></span>
@@ -75,11 +74,11 @@ if(isset($_POST['user_create'])){
     
     </button>
 
-    <a class="navbar-brand" href="../index.php">Stock36</a>
+    <a class="navbar-brand" href="../index.php" style="color:white">Stock36</a>
    </div>
    <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li ><a href="#login" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ><a href="#login" data-toggle="modal" data-target="#loginModal" style="color:white"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
       </ul>
   </div>
   
@@ -87,7 +86,7 @@ if(isset($_POST['user_create'])){
 </div>
 
 
-<div class="container" style="margin-top: 70px;">
+<div class="container-fluid" style="margin-top: 70px;">
     <div class="jumbotron centered-text">
       <h1 align="center">Register yourself</h1>
     </div>
@@ -101,7 +100,7 @@ if(isset($_POST['user_create'])){
    </div>
   
   
-   <div class="col-md-9" style="background-color:#d7d9dd; border-radius: 5px; height: 500px;margin-left: 65px;">
+   <div class="col-md-9" style="background-color:white; height: 500px;margin-left: 65px;">
 
     <br>
      <?php   if(isset($_SESSION['msg'])){
@@ -111,7 +110,7 @@ if(isset($_POST['user_create'])){
       ?>
      
     <br>
-    <div id="form">
+    <div id="form"  >
      <div class="form-reg brdr">
       <form class="form-horizontal" name="Form" method="post" action="#" id="reg-form">
            
@@ -120,7 +119,7 @@ if(isset($_POST['user_create'])){
             <div class="form-group">
              <label class="control-label col-sm-4" for="pass">Name:</label>
              <div class="col-sm-7"> 
-               <input type="text" name="user_fname" class="form-control textInput" id="fname" placeholder="Enter Full name">
+               <input type="text" name="user_fname" class="form-control textInput" id="fname" placeholder="Enter Full name" >
              </div>
             </div>
 
@@ -141,7 +140,7 @@ if(isset($_POST['user_create'])){
             <div class="form-group">
              <label class="control-label col-sm-4" for="pass">Email:</label>
              <div class="col-sm-7"> 
-               <input type="email" name="user_email" class="form-control textInput" id="email" placeholder="Enter email">
+               <input type="email" name="user_email" class="form-control textInput" id="email" placeholder="Enter email" >
              </div>
             </div>
 
@@ -149,7 +148,7 @@ if(isset($_POST['user_create'])){
             <div class="form-group">
              <label class="control-label col-sm-4" for="pass">Password:</label>
              <div class="col-sm-7"> 
-               <input type="password" name="user_pass" class="form-control textInput" id="pass" placeholder="Enter Password">
+               <input type="password" name="user_pass" class="form-control textInput" id="pass" placeholder="Enter Password" >
              </div>
             </div>
 
@@ -177,7 +176,7 @@ if(isset($_POST['user_create'])){
             </div>
 
             <div class="form-group">
-             <label class="control-label col-sm-4" for="pass">Trading Type:</label>
+             <label class="control-label col-sm-4" for="pass">Cap Type:</label>
              <div class="col-sm-7"> 
                <select name="user_captype" style="color:black; height:32px; width:300px;">
                <option value="Large Cap">Large Cap</option>
@@ -244,6 +243,8 @@ if(isset($_POST['user_create'])){
                 </div>  
            </div>  
       </div>  
+
+    </div> 
 
 
  <script>

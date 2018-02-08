@@ -12,7 +12,7 @@ Technologies used:
 		Bootstrap
 		Ajax
 		Jquery
-		XML
+		
 
 	Machine Learning:
 		Algorithm: 

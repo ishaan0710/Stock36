@@ -16,7 +16,7 @@ Technologies used:
 
 	Machine Learning:
 		Algorithm: 
-			Artificial Neural Networks
+			Recurrent Neural Networks
 
 		Language:
 			Python
